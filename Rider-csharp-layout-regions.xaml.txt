@@ -207,29 +207,10 @@
                 </Entry.SortBy>
             </Entry>
         </Region>
-        <Region Name="Public operators">
-            <Entry DisplayName="Public operators" Priority="50">
+        <Region Name="Operators">
+            <Entry DisplayName="Operators" Priority="50">
                 <Entry.Match>
-                    <And>
-                        <Kind Is="Operator" />
-                        <Or>
-                            <Access Is="Public" />
-                            <Access Is="Protected" />
-                            <Access Is="ProtectedInternal" />
-                        </Or>
-                    </And>
-                </Entry.Match>
-                <Entry.SortBy>
-                    <Name />
-                </Entry.SortBy>
-            </Entry>
-        </Region>
-        <Region Name="Private operators">
-            <Entry DisplayName="Private operators" Priority="50">
-                <Entry.Match>
-                    <And>
-                        <Kind Is="Operator" />
-                    </And>
+                    <Kind Is="Operator" />
                 </Entry.Match>
                 <Entry.SortBy>
                     <Name />
@@ -280,10 +261,7 @@
                             <Kind Is="Indexer" />
                         </Or>
                         <Not>
-                            <Or>
-                                <Access Is="Public" />
-                                <Access Is="Internal" />
-                            </Or>
+                            <Access Is="Public" />
                         </Not>
                     </And>
                 </Entry.Match>
