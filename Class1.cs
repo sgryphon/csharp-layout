@@ -8,15 +8,17 @@ namespace csharp_layout
     {
         private string Foo()
         {
+            return null;
         }
 
         public int Bar()
         {
+            return 0;
         }
 
         public int _x1;
         private int _a2;
-        protected internal readonly int _m3;
+        protected internal readonly int _m3 = 5;
         private int _count;
         private bool _isSynchronized;
         private object _syncRoot;
@@ -37,8 +39,8 @@ namespace csharp_layout
         }
 
         internal static int _x4;
-        public const int Q5;
-        private const int B6;
+        public const int Q5 = 1;
+        private const int B6 = 2;
 
         public Class1(string x)
         {
