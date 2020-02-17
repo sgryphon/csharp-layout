@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace csharp_layout
 {
-    public abstract class Class1 : IEquatable<Class1>, ICloneable, ICollection
+    public abstract class Class1 : IEquatable<Class1>, ICloneable, ICollection, Class1.ITestInternal
     {
         private string Foo()
         {
@@ -25,7 +25,7 @@ namespace csharp_layout
 
         int ICollection.Count => _count;
 
-        bool ICollection.IsSynchronized => _isSynchronized;
+        public bool IsSynchronized => _isSynchronized;
         
         private Class1(int x)
         {
@@ -38,6 +38,12 @@ namespace csharp_layout
         {
         }
 
+        internal interface ITestInternal
+        {
+            int Test1();
+            int Test2();
+        }
+        
         internal static int _x4;
         public const int Q5 = 1;
         private const int B6 = 2;
@@ -125,5 +131,12 @@ namespace csharp_layout
         }
 
         object ICollection.SyncRoot => _syncRoot;
+
+        int ITestInternal.Test1()
+        {
+            return 0;
+        }
+
+        public abstract int Test2();
     }
 }
