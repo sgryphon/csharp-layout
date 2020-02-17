@@ -83,7 +83,7 @@
         <Kind Is="Interface" />
       </Or>
     </TypePattern.Match>
-    <Entry Priority="200" DisplayName="Constructors and destructors">
+    <Entry DisplayName="Constructors and destructors">
       <Entry.Match>
         <Or>
           <Kind Is="Constructor" />
@@ -91,7 +91,6 @@
         </Or>
       </Entry.Match>
       <Entry.SortBy>
-        <Kind />
         <Access />
       </Entry.SortBy>
     </Entry>
@@ -239,7 +238,6 @@
         </And>
       </Entry.Match>
       <Entry.SortBy>
-        <Kind />
         <Name />
       </Entry.SortBy>
     </Entry>
