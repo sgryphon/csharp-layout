@@ -159,6 +159,9 @@
                             <Kind Is="Property" />
                             <Kind Is="Indexer" />
                         </Or>
+                        <Not>
+                            <ImplementsInterface />
+                        </Not>
                     </And>
                 </Entry.Match>
                 <Entry.SortBy>
@@ -167,7 +170,7 @@
             </Entry>
         </Region>
         <Region Name="Public methods">
-            <Entry DisplayName="Public methods">
+            <Entry DisplayName="Public methods" Priority="0">
                 <Entry.Match>
                     <And>
                         <Kind Is="Method" />
@@ -176,6 +179,9 @@
                             <Access Is="Protected" />
                             <Access Is="ProtectedInternal" />
                         </Or>
+                        <Not>
+                            <Kind Is="Operator" />
+                        </Not>
                     </And>
                 </Entry.Match>
                 <Entry.SortBy>
@@ -184,10 +190,16 @@
             </Entry>
         </Region>
         <Region Name="Private methods">
-            <Entry DisplayName="Private methods">
+            <Entry DisplayName="Private methods" Priority="0">
                 <Entry.Match>
                     <And>
                         <Kind Is="Method" />
+                        <Not>
+                            <Kind Is="Operator" />
+                        </Not>
+                        <Not>
+                            <ImplementsInterface />
+                        </Not>
                     </And>
                 </Entry.Match>
                 <Entry.SortBy>
@@ -196,7 +208,7 @@
             </Entry>
         </Region>
         <Region Name="Public operators">
-            <Entry DisplayName="Public operators">
+            <Entry DisplayName="Public operators" Priority="50">
                 <Entry.Match>
                     <And>
                         <Kind Is="Operator" />
@@ -213,7 +225,7 @@
             </Entry>
         </Region>
         <Region Name="Private operators">
-            <Entry DisplayName="Private operators">
+            <Entry DisplayName="Private operators" Priority="50">
                 <Entry.Match>
                     <And>
                         <Kind Is="Operator" />
@@ -246,6 +258,9 @@
                 <Entry.Match>
                     <And>
                         <Kind Is="Event" />
+                        <Not>
+                            <ImplementsInterface />
+                        </Not>
                     </And>
                 </Entry.Match>
                 <Entry.SortBy>
@@ -254,10 +269,22 @@
             </Entry>
         </Region>
         <Region Name="Explicit interface implementations">
-            <Entry DisplayName="Explicit interface implementations">
+            <Entry DisplayName="Explicit interface implementations" Priority="150">
                 <Entry.Match>
                     <And>
                         <ImplementsInterface />
+                        <Or>
+                            <Kind Is="Event" />
+                            <Kind Is="Method" />
+                            <Kind Is="Property" />
+                            <Kind Is="Indexer" />
+                        </Or>
+                        <Not>
+                            <Or>
+                                <Access Is="Public" />
+                                <Access Is="Internal" />
+                            </Or>
+                        </Not>
                     </And>
                 </Entry.Match>
                 <Entry.SortBy>
