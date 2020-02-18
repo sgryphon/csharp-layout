@@ -73,6 +73,11 @@ namespace csharp_layout
 
         public delegate string UuuDelegate(int a, int b);
 
+        private struct AnotherStruct
+        {
+            public int Aaa001;
+        }
+        
         public class JjjInner
         {
             public string Pppp { get; set; }
@@ -92,6 +97,14 @@ namespace csharp_layout
             get { return null; }
             set { }
         }
+
+        internal string Secret
+        {
+            get { return null;  }
+        }
+        
+
+        internal delegate void AnotherDelegate();
         
         public bool Equals(ExampleClass other)
         {
@@ -122,6 +135,18 @@ namespace csharp_layout
             // Destructors (finalizers) are always private, so will never appear in API documentation
             throw new NotImplementedException();
         }
+
+        public enum PubEnum
+        {
+            InnerEnum,
+            InnerEnum2
+        }
+
+        private object this[string key]
+        {
+            get { return ""; }
+        }
+        
         
         public static string operator +(ExampleClass a, ExampleClass b)
         {
