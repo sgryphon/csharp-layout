@@ -180,6 +180,11 @@ namespace csharp_layout
             return null;
         }
 
+        public interface AnotherInterface
+        {
+            void MyMethod7();
+        }
+
         public abstract int Test3();
     }
 }
