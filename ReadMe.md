@@ -1,18 +1,38 @@
 C# File Layout
 ==============
 
-Templates for configuration file layout in Rider and Resharper.
+Templates for configuration file layout in Rider and Resharper (R#).
 
-Versions are provided with regions for each section, for debugging. Using these 
-will show you exactly what ends up matched to each entry.
+Layouts are provided for both Style Cop analyser order, and the .NET API
+documentation order.
+
+Versions are provided with regions for each section, for debugging. Using the
+layouts with regions with the example class (which has examples of all types of 
+elements) will show you exactly what ends up matched to each entry.
 
 If the layout isn't working, add a test case scenario to the example class
 (and save it before cleanup); then use the version with regions to make changes, 
 and test that it is working correctly.
 
 A PowerShell script is provided that will then convert the version with regions
-to a regionless version (it simply removes the regions), which is the one you
-would normally  use.
+to a regionless version (it simply removes the regions). Normally the regionless
+version would be used.
+
+Note that often many of the subcategories will be empty, e.g. inner enums, interfaces,
+etc are rare, and it would be unusual for class to have more than the basic categories.
+
+Differences
+-----------
+
+The major differences between the Style Cop and Documentation layouts are:
+* Style Cop has fields first; Documentation has constructors first.
+* Style Cop has events before properties and methods; Documentation has them after.
+* Style Cop has a separate section for indexers; Documentation includes them in fields.
+* Style Cop includes operators in methods; Documentation has them separate.
+* Style Cop includes explicit interface implementations in each section; Documentation lists them separately.
+
+Note that for the interface implementations, Style Cop provides the suggestion to use partial
+classes to keep them separate if desired.
 
 Style Cop Layout
 ----------------
@@ -69,3 +89,8 @@ icon or flag.
 
 In the documentation, inner delegates, enums, interfaces, structs, and classes, are
 documented on separate pages. These constructs are relatively uncommon.
+
+Some example documentation:
+* Constructors, Fields, Properties, Methods, Operators, Explicit interfaces implementations: https://docs.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=netcore-3.1#constructors
+* Indexers: https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=netcore-3.1#properties
+* Events: https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=netcore-3.1
