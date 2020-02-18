@@ -40,8 +40,8 @@ namespace csharp_layout
 
         internal interface ITestInternal
         {
-            int Test1();
-            int Test2();
+            string Test1();
+            string Test2();
         }
         
         internal static int _x4;
@@ -56,9 +56,14 @@ namespace csharp_layout
 
         static ExampleClass()
         {
-
+            // Static constructors are always private, so will never appear in API documentation
         }
 
+        internal protected struct InnerStruct
+        {
+            public string FieldValue;
+        }
+        
         public event EventHandler<string> YyEvent; 
 
         public event EventHandler<string> RrEvent {
@@ -66,7 +71,7 @@ namespace csharp_layout
             remove { }
         }
 
-        public delegate int UuuDelegate(int a, int b);
+        public delegate string UuuDelegate(int a, int b);
 
         public class JjjInner
         {
@@ -79,7 +84,7 @@ namespace csharp_layout
 
         protected ExampleClass(bool x)
         {
-            
+            const string Note1 = "Public, or even protected, inner classes are rare";
         }
 
         public string this[int i]
@@ -107,12 +112,20 @@ namespace csharp_layout
         private enum Blah
         {
             Unknown = 0,
-            Thing = 1
+            ThisIsRatherRare = 1,
+            ToHaveInternalDefinitions = 2, 
+            ButDoesSometimesHappen =3 
         }
 
-        public static int operator +(ExampleClass a, ExampleClass b)
+        ~ExampleClass()
         {
-            return 0;
+            // Destructors (finalizers) are always private, so will never appear in API documentation
+            throw new NotImplementedException();
+        }
+        
+        public static string operator +(ExampleClass a, ExampleClass b)
+        {
+            return "Operators must be public and static";
         }
 
         protected static int Eeee(int x)
@@ -120,23 +133,28 @@ namespace csharp_layout
             return 1;
         }
         
-        object ICloneable.Clone()
+        public object Clone()
         {
-            throw new NotImplementedException();
+            return "Interface implementations must be either public";
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return "Or must be explicitly implemented".GetEnumerator();
+        }
+
+        public virtual string Test2()
+        {
+            return "Even internal interfaces must be public (or explicit)";
         }
 
         object ICollection.SyncRoot => _syncRoot;
-
-        int ITestInternal.Test1()
+        
+        string ITestInternal.Test1()
         {
-            return 0;
+            return null;
         }
 
-        public abstract int Test2();
+        public abstract int Test3();
     }
 }
