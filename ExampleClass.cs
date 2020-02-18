@@ -42,6 +42,7 @@ namespace csharp_layout
         {
             string Test1();
             string Test2();
+            int Test3();
         }
         
         internal static int _x4;
