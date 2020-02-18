@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-16"?>
+﻿<?xml version="1.0"?>
 <Patterns xmlns="urn:schemas-jetbrains-com:member-reordering-patterns">
     <TypePattern DisplayName="COM interfaces">
         <TypePattern.Match>
@@ -75,7 +75,7 @@
             </Entry.SortBy>
         </Entry>
     </TypePattern>
-    <TypePattern DisplayName="Standard Layout" RemoveRegions="All">
+    <TypePattern DisplayName="Documentation Layout" RemoveRegions="All">
         <TypePattern.Match>
             <Or>
                 <Kind Is="Class" />
