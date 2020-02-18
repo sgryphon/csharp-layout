@@ -176,6 +176,7 @@
                             <Access Is="Public" />
                             <Access Is="Protected" />
                             <Access Is="ProtectedInternal" />
+                            <ImplementsInterface />
                         </Or>
                     </And>
                 </Entry.Match>
@@ -259,6 +260,7 @@
                             <Access Is="Public" />
                             <Access Is="Protected" />
                             <Access Is="ProtectedInternal" />
+                            <ImplementsInterface />
                         </Or>
                     </And>
                 </Entry.Match>
@@ -286,6 +288,7 @@
                             <Access Is="Public" />
                             <Access Is="Protected" />
                             <Access Is="ProtectedInternal" />
+                            <ImplementsInterface />
                         </Or>
                     </And>
                 </Entry.Match>
@@ -313,6 +316,7 @@
                             <Access Is="Public" />
                             <Access Is="Protected" />
                             <Access Is="ProtectedInternal" />
+                            <ImplementsInterface />
                         </Or>
                     </And>
                 </Entry.Match>

@@ -38,8 +38,8 @@ This order is:
 Within each category, elements are group by whether they are part of the public API (public 
 or protected) or not (internal or private), and then sorted alphabetically by name.
 
-Explicit interface implementations of events, properties, and methods, are included in the
-private section.
+Explicit interface implementations of events, properties (& indexers), and methods, are included 
+in the public API section.
 
 To group elements like interface implementations together, the rule suggests using partial
 classes (one for the main class, one for the interface elements).
