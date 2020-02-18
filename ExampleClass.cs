@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace csharp_layout
 {
-    public abstract class Class1 : IEquatable<Class1>, ICloneable, ICollection, Class1.ITestInternal
+    public abstract class ExampleClass : IEquatable<ExampleClass>, ICloneable, ICollection, ExampleClass.ITestInternal
     {
         private string Foo()
         {
@@ -27,14 +27,14 @@ namespace csharp_layout
 
         public bool IsSynchronized => _isSynchronized;
         
-        private Class1(int x)
+        private ExampleClass(int x)
         {
         }
 
         public int Mm102 { get; }
         public int Aa103 { get; }
 
-        public Class1()
+        public ExampleClass()
         {
         }
 
@@ -48,13 +48,13 @@ namespace csharp_layout
         public const int Q5 = 1;
         private const int B6 = 2;
 
-        public Class1(string x)
+        public ExampleClass(string x)
         {
         }
 
         protected int Dd104 { get; set; }
 
-        static Class1()
+        static ExampleClass()
         {
 
         }
@@ -77,7 +77,7 @@ namespace csharp_layout
         
         protected abstract void Internal();
 
-        protected Class1(bool x)
+        protected ExampleClass(bool x)
         {
             
         }
@@ -88,7 +88,7 @@ namespace csharp_layout
             set { }
         }
         
-        public bool Equals(Class1 other)
+        public bool Equals(ExampleClass other)
         {
             throw new NotImplementedException();
         }
@@ -110,7 +110,7 @@ namespace csharp_layout
             Thing = 1
         }
 
-        public static int operator +(Class1 a, Class1 b)
+        public static int operator +(ExampleClass a, ExampleClass b)
         {
             return 0;
         }
