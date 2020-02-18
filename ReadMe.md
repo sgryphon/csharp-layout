@@ -14,6 +14,36 @@ A PowerShell script is provided that will then convert the version with regions
 to a regionless version (it simply removes the regions), which is the one you
 would normally  use.
 
+Style Cop Layout
+----------------
+
+This matches the order specified in the Style Cop analyser rule SA2101.
+
+https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1201.md
+
+This order is:
+* Fields
+* Constructors
+* Finalizers (Destructors)
+* Delegates
+* Events
+* Enums
+* Interfaces
+* Properties
+* Indexers
+* Methods (includes Operators)
+* Structs
+* Classes
+
+Within each category, elements are group by whether they are part of the public API (public 
+or protected) or not (internal or private), and then sorted alphabetically by name.
+
+Explicit interface implementations of events, properties, and methods, are included in the
+private section.
+
+To group elements like interface implementations together, the rule suggests using partial
+classes (one for the main class, one for the interface elements).
+
 Documentation Layout
 --------------------
 
