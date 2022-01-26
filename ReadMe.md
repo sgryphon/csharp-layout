@@ -3,6 +3,11 @@ C# File Layout
 
 Templates for configuration file layout in Rider and Resharper (R#).
 
+To configure this in Rider (version 2021.3), the setting is in File > Settings, 
+then Editor > Code Style > C#, on the File Layout tab (far right), then the General tab.
+Just paste the raw contents of the file (I usually use csharp-layout-stylecop.xml) into
+the setting.
+
 Layouts are provided for both Style Cop analyser order, and the .NET API
 documentation order.
 
